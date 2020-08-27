@@ -1,5 +1,10 @@
 # redis-sentinel-submit-master-to-cosnsul-kv-store
 
+This script is needed to organize High Availability according to the following scheme:
+<pre>
+redis-sentinel -> consul -> consul-template -> haproxy
+</pre>
+
 Install:
 <pre>
 systemctl stop redis-sentinel.service
