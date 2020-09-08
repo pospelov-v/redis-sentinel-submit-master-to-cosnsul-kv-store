@@ -6,7 +6,9 @@ If script terminates because it receives a signal the behavior is the same as ex
 A script has a maximum running time of 60 seconds. After this limit is reached the script is terminated with a <code>SIGKILL</code> and the execution retried.<br />
 <br />
 NOTIFICATION SCRIPT<br />
-<code>sentinel notification-script <master-name> <script-path></code><br />
+<pre>
+sentinel notification-script <master-name> <script-path>
+</pre>
 Call the specified notification script for any sentinel event that is generated in the WARNING level (for instance <code>-sdown</code>, <code>-odown</code>, and so forth). This script should notify the system administrator via email, SMS, or any other messaging system, that there is something wrong with the monitored Redis systems.<br />
 The script is called with just two arguments: the first is the event type and the second the event description.<br />
 The script must exist and be executable in order for sentinel to start if this option is provided.<br />
@@ -17,7 +19,9 @@ sentinel notification-script mymaster /var/redis/notify.sh
 </pre>
 <br />
 CLIENTS RECONFIGURATION SCRIPT<br />
-<code>sentinel client-reconfig-script <master-name> <script-path></code><br />
+<pre>
+sentinel client-reconfig-script <master-name> <script-path>
+</pre>
 When the master changed because of a failover a script can be called in order to perform application-specific tasks to notify the clients that the configuration has changed and the master is at a different address.<br />
 The following arguments are passed to the script:<br />
 <code><master-name> <role> <state> <from-ip> <from-port> <to-ip> <to-port></code><br />
