@@ -32,6 +32,7 @@ Example:<br />
 <pre>
 sentinel client-reconfig-script mymaster /var/redis/reconfig.sh
 </pre>
+<br />
 
 # redis-sentinel-submit-master-to-cosnsul-kv-store
 
