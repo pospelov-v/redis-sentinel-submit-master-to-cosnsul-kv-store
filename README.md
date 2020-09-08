@@ -1,4 +1,5 @@
 SCRIPTS EXECUTION<br />
+<br />
 sentinel notification-script and sentinel reconfig-script are used in order to configure scripts that are called to notify the system administrator or to reconfigure clients after a failover. The scripts are executed with the following rules for error handling:<br />
 If script exits with "1" the execution is retried later (up to a maximum number of times currently set to 10).<br />
 If script exits with "2" (or an higher value) the script execution is not retried.<br />
@@ -6,6 +7,7 @@ If script terminates because it receives a signal the behavior is the same as ex
 A script has a maximum running time of 60 seconds. After this limit is reached the script is terminated with a <code>SIGKILL</code> and the execution retried.<br />
 <br />
 NOTIFICATION SCRIPT<br />
+<br />
 <code>sentinel notification-script [master-name] [script-path]</code><br />
 Call the specified notification script for any sentinel event that is generated in the WARNING level (for instance <code>-sdown</code>, <code>-odown</code>, and so forth). This script should notify the system administrator via email, SMS, or any other messaging system, that there is something wrong with the monitored Redis systems.<br />
 The script is called with just two arguments: the first is the event type and the second the event description.<br />
@@ -17,6 +19,7 @@ sentinel notification-script mymaster /var/redis/notify.sh
 </pre>
 <br />
 CLIENTS RECONFIGURATION SCRIPT<br />
+<br />
 <code>sentinel client-reconfig-script [master-name] [script-path]</code><br />
 When the master changed because of a failover a script can be called in order to perform application-specific tasks to notify the clients that the configuration has changed and the master is at a different address.<br />
 The following arguments are passed to the script:<br />
