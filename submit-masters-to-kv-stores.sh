@@ -4,7 +4,7 @@ _consul="/usr/local/bin/consul";
 
 if ! [ -f "${_consul}" ];
 then
-  exit 2;
+  exit 3;
 fi;
 
 if [ "${1}" ] && [ "${2}" ] && [ "${3}" ] && [ "${4}" ] && [ "${5}" ] && [ "${6}" ] && [ "${7}" ];
