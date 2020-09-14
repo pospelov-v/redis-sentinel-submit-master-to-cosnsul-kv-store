@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_consul="/usr/local/bin/consul"
+_consul="/usr/local/bin/consul";
 
 if ! [ -f "${_consul}" ];
 then
