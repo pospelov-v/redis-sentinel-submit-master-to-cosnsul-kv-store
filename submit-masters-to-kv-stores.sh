@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Consul Path:
 _consul="/usr/local/bin/consul";
 
 if ! [ -f "${_consul}" ];
